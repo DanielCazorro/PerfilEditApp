@@ -12,7 +12,7 @@ protocol PerfilViewModelDelegate: AnyObject {
     func didUpdateInformation()
 }
 
-class PerfilViewController: UIViewController, UITextFieldDelegate {
+class PerfilViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -86,6 +86,11 @@ class PerfilViewController: UIViewController, UITextFieldDelegate {
         imageViewBackShadow.layer.shadowOpacity = 0.3
         imageViewBackShadow.layer.shadowOffset = CGSize(width: 0, height: 5)
         imageViewBackShadow.layer.shadowRadius = 2
+        
+        // Configurar el gesto para la imagen
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapImageButton))
+        imageButton.isUserInteractionEnabled = true
+        imageButton.addGestureRecognizer(tapGesture)
     }
     
     // MARK: IBActions
@@ -109,19 +114,26 @@ class PerfilViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Método para mostrar la alerta
-        func showAlert() {
-            let alertController = UIAlertController(
-                title: "Información actualizada",
-                message: "La información se ha actualizado correctamente.",
-                preferredStyle: .alert
-            )
-
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(okAction)
-
-            present(alertController, animated: true, completion: nil)
-        }
+    func showAlert() {
+        let alertController = UIAlertController(
+            title: "Información actualizada",
+            message: "La información se ha actualizado correctamente.",
+            preferredStyle: .alert
+        )
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
     
+    /// Función que reconoce al pulsar sobre la imagen que abre la galería
+    @objc func tapImageButton() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - PerfilViewModelDelegate
