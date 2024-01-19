@@ -18,23 +18,149 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfil VIEW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcP-5W-9Fe">
-                    <rect key="frame" x="154" y="415.66666666666669" width="85" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7h-X4-h1M">
+                    <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Meu-bp-5B7"/>
+                        <constraint firstAttribute="height" constant="44" id="eZU-ml-C0G"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="Editar Perfil" id="sQf-xX-SBj"/>
+                    </items>
+                </navigationBar>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="men" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-R0-oUb">
+                    <rect key="frame" x="120.66666666666669" y="127" width="152" height="152"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="152" id="Sjl-uM-xi8"/>
+                        <constraint firstAttribute="height" constant="152" id="XZs-xn-zan"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="2r2-dM-4le">
+                    <rect key="frame" x="40" y="315" width="313" height="353.33333333333326"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JDg-9r-6Fn">
+                            <rect key="frame" x="0.0" y="0.0" width="313" height="43.666666666666664"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Correo electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XQ-zF-NxG">
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="15.666666666666666"/>
+                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a.jimenez@vass.es" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oa0-Dd-0xP">
+                                    <rect key="frame" x="0.0" y="25.666666666666686" width="313" height="18"/>
+                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="UbK-28-iKS">
+                            <rect key="frame" x="0.0" y="64.666666666666686" width="313" height="69.666666666666686"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teléfono móvil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7p-IC-g7i">
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="15.666666666666666"/>
+                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduzca su número de teléfono" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQX-Ts-Gbt">
+                                    <rect key="frame" x="0.0" y="21.666666666666629" width="313" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="wFh-21-F7Y"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yJi-dd-HgU">
+                            <rect key="frame" x="0.0" y="155.33333333333331" width="313" height="43.666666666666657"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVz-bP-8mZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="15.666666666666666"/>
+                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alejandro Jiménez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oX-u7-tYr">
+                                    <rect key="frame" x="0.0" y="25.666666666666686" width="313" height="18"/>
+                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hUR-9y-YB0">
+                            <rect key="frame" x="0.0" y="220" width="313" height="43.666666666666686"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oficina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIH-OV-lTk">
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="15.666666666666666"/>
+                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VASS Madrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNE-Vg-XIV">
+                                    <rect key="frame" x="0.0" y="25.666666666666629" width="313" height="18"/>
+                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C2k-O5-FwD">
+                            <rect key="frame" x="0.0" y="284.66666666666663" width="313" height="68.666666666666686"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-J1-D2n">
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="15.666666666666666"/>
+                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Información sobre mi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-o4-JLB">
+                                    <rect key="frame" x="0.0" y="20.666666666666742" width="313" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="o9I-MI-VEC"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-iv-CcS">
+                    <rect key="frame" x="16" y="738" width="361" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="bsn-tf-jUf"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Actualizar" titleAlignment="center">
+                        <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                        <color key="baseBackgroundColor" red="0.36470589040000001" green="0.72941178080000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="zcP-5W-9Fe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7BW-90-MqI"/>
-                <constraint firstItem="zcP-5W-9Fe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="BGF-l7-v7S"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Qb-iv-CcS" secondAttribute="trailing" constant="16" id="5WN-ST-O7W"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S7h-X4-h1M" secondAttribute="trailing" id="NYs-Ix-0fG"/>
+                <constraint firstItem="2r2-dM-4le" firstAttribute="top" secondItem="IRv-R0-oUb" secondAttribute="bottom" constant="36" id="XZ9-gD-xkF"/>
+                <constraint firstItem="S7h-X4-h1M" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aak-hr-dgB"/>
+                <constraint firstItem="S7h-X4-h1M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dId-17-5Ww"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2r2-dM-4le" secondAttribute="trailing" constant="40" id="dVD-fN-gb9"/>
+                <constraint firstItem="3Qb-iv-CcS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="iMp-yT-o1M"/>
+                <constraint firstItem="IRv-R0-oUb" firstAttribute="top" secondItem="S7h-X4-h1M" secondAttribute="bottom" constant="24" id="maB-Rx-EGd"/>
+                <constraint firstItem="IRv-R0-oUb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oU8-kQ-XPA"/>
+                <constraint firstItem="2r2-dM-4le" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="stp-zY-Cne"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3Qb-iv-CcS" secondAttribute="bottom" constant="24" id="vNy-m5-vDV"/>
             </constraints>
-            <point key="canvasLocation" x="-40" y="20"/>
+            <point key="canvasLocation" x="-40.458015267175568" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <image name="men" width="182" height="274"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
