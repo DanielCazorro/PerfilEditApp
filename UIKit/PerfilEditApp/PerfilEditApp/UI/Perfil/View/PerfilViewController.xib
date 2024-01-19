@@ -9,6 +9,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PerfilViewController" customModule="PerfilEditApp" customModuleProvider="target">
             <connections>
+                <outlet property="aboutMeLabel" destination="RA4-J1-D2n" id="SDR-qT-FTa"/>
+                <outlet property="aboutMeStackView" destination="C2k-O5-FwD" id="zsH-5P-1sQ"/>
+                <outlet property="aboutMeTextField" destination="hjj-o4-JLB" id="oZ9-KJ-DNK"/>
+                <outlet property="emailCompleteLabel" destination="oa0-Dd-0xP" id="Kgi-wd-IzS"/>
+                <outlet property="emailLabel" destination="7XQ-zF-NxG" id="mn1-5X-wfL"/>
+                <outlet property="emailStackView" destination="JDg-9r-6Fn" id="dgs-LF-DcY"/>
+                <outlet property="imageButton" destination="t4w-1s-btL" id="nH8-k5-Pgb"/>
+                <outlet property="imageView" destination="IRv-R0-oUb" id="jta-xX-jji"/>
+                <outlet property="nameCompleteLabel" destination="7oX-u7-tYr" id="KKR-Uf-dl5"/>
+                <outlet property="nameLabel" destination="JVz-bP-8mZ" id="bQe-vT-eh0"/>
+                <outlet property="nameStackView" destination="yJi-dd-HgU" id="EtK-vO-9un"/>
+                <outlet property="navigationBackButton" destination="X0k-fZ-4OG" id="jiu-EL-NkR"/>
+                <outlet property="navigationBar" destination="S7h-X4-h1M" id="2nh-m8-f58"/>
+                <outlet property="navigationCloseButton" destination="grg-wG-Q47" id="Xic-Ml-dCD"/>
+                <outlet property="officeNameCompleteLabel" destination="gNE-Vg-XIV" id="WZk-n1-mgh"/>
+                <outlet property="officeNameLabel" destination="ZIH-OV-lTk" id="Mtw-By-nJu"/>
+                <outlet property="officeStackView" destination="hUR-9y-YB0" id="LHB-1O-gYF"/>
+                <outlet property="phoneLabel" destination="E7p-IC-g7i" id="EPZ-RT-1o3"/>
+                <outlet property="phoneNumberTextField" destination="HQX-Ts-Gbt" id="LGK-e9-aa7"/>
+                <outlet property="phoneStackView" destination="UbK-28-iKS" id="jOF-cc-HV6"/>
+                <outlet property="updateButton" destination="3Qb-iv-CcS" id="EZo-wd-Jg7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,6 +44,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="eZU-ml-C0G"/>
                     </constraints>
+                    <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <textAttributes key="titleTextAttributes">
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </textAttributes>
@@ -31,7 +53,7 @@
                     </textAttributes>
                     <items>
                         <navigationItem title="Editar Perfil" id="sQf-xX-SBj">
-                            <barButtonItem key="leftBarButtonItem" style="plain" id="wTU-t0-T2O">
+                            <barButtonItem key="leftBarButtonItem" id="wTU-t0-T2O">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="X0k-fZ-4OG">
                                     <rect key="frame" x="16" y="5" width="87" height="34.333333333333336"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -39,7 +61,7 @@
                                     <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system"/>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem key="rightBarButtonItem" style="plain" id="p7n-mt-0sh">
+                            <barButtonItem key="rightBarButtonItem" id="p7n-mt-0sh">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" id="grg-wG-Q47">
                                     <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,6 +76,14 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="152" id="Sjl-uM-xi8"/>
                         <constraint firstAttribute="height" constant="152" id="XZs-xn-zan"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t4w-1s-btL">
+                    <rect key="frame" x="240.66666666666663" y="247.99999999999997" width="32" height="30.666666666666657"/>
+                    <color key="tintColor" red="0.8392156959" green="0.8392156959" blue="0.8392156959" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="Mli-mf-k6a"/>
+                        <constraint firstAttribute="height" constant="32" id="lhY-8J-wy8"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JDg-9r-6Fn">
@@ -90,7 +120,7 @@
                         <constraint firstAttribute="height" constant="48" id="GVn-Ca-elX"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" textContentType="tel"/>
                 </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yJi-dd-HgU">
                     <rect key="frame" x="63.999999999999986" y="465.33333333333331" width="131.66666666666663" height="43.666666666666686"/>
@@ -109,17 +139,6 @@
                         </label>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-iv-CcS">
-                    <rect key="frame" x="16" y="738" width="361" height="56"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="56" id="bsn-tf-jUf"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Actualizar" titleAlignment="center">
-                        <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
-                        <color key="baseBackgroundColor" red="0.36470589040000001" green="0.72941178080000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </buttonConfiguration>
-                </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hUR-9y-YB0">
                     <rect key="frame" x="64" y="529" width="95" height="43.666666666666629"/>
                     <subviews>
@@ -156,6 +175,17 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-iv-CcS">
+                    <rect key="frame" x="16" y="738" width="361" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="bsn-tf-jUf"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Actualizar" titleAlignment="center">
+                        <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                        <color key="baseBackgroundColor" red="0.36470589040000001" green="0.72941178080000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </buttonConfiguration>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -166,6 +196,7 @@
                 <constraint firstItem="JDg-9r-6Fn" firstAttribute="top" secondItem="IRv-R0-oUb" secondAttribute="bottom" constant="36" id="63K-0b-cVt"/>
                 <constraint firstItem="HQX-Ts-Gbt" firstAttribute="top" secondItem="UbK-28-iKS" secondAttribute="bottom" constant="6" id="Ehg-Fj-iH4"/>
                 <constraint firstItem="C2k-O5-FwD" firstAttribute="top" secondItem="hUR-9y-YB0" secondAttribute="bottom" constant="20" id="JTU-67-xW7"/>
+                <constraint firstItem="t4w-1s-btL" firstAttribute="bottom" secondItem="IRv-R0-oUb" secondAttribute="bottom" id="KYF-hO-UnS"/>
                 <constraint firstItem="JDg-9r-6Fn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="64" id="L33-aB-TGk"/>
                 <constraint firstItem="HQX-Ts-Gbt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Lpj-o4-JIT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S7h-X4-h1M" secondAttribute="trailing" id="NYs-Ix-0fG"/>
@@ -176,6 +207,7 @@
                 <constraint firstItem="S7h-X4-h1M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dId-17-5Ww"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hjj-o4-JLB" secondAttribute="trailing" constant="40" id="eaf-Hx-RbI"/>
                 <constraint firstItem="hUR-9y-YB0" firstAttribute="top" secondItem="yJi-dd-HgU" secondAttribute="bottom" constant="20" id="ewW-KV-zuk"/>
+                <constraint firstItem="t4w-1s-btL" firstAttribute="trailing" secondItem="IRv-R0-oUb" secondAttribute="trailing" id="gIm-av-ZSq"/>
                 <constraint firstItem="UbK-28-iKS" firstAttribute="top" secondItem="JDg-9r-6Fn" secondAttribute="bottom" constant="21" id="hLt-aH-s1x"/>
                 <constraint firstItem="3Qb-iv-CcS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="iMp-yT-o1M"/>
                 <constraint firstItem="yJi-dd-HgU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="64" id="jqe-di-JYh"/>
@@ -191,5 +223,6 @@
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="men" width="182" height="274"/>
+        <image name="photo.circle" catalog="system" width="128" height="123"/>
     </resources>
 </document>
