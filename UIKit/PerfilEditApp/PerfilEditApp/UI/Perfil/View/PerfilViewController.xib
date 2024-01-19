@@ -17,6 +17,7 @@
                 <outlet property="emailStackView" destination="JDg-9r-6Fn" id="dgs-LF-DcY"/>
                 <outlet property="imageButton" destination="t4w-1s-btL" id="nH8-k5-Pgb"/>
                 <outlet property="imageView" destination="IRv-R0-oUb" id="jta-xX-jji"/>
+                <outlet property="imageViewBackShadow" destination="Bf5-hC-kAC" id="Sbc-So-JC8"/>
                 <outlet property="nameCompleteLabel" destination="7oX-u7-tYr" id="KKR-Uf-dl5"/>
                 <outlet property="nameLabel" destination="JVz-bP-8mZ" id="bQe-vT-eh0"/>
                 <outlet property="nameStackView" destination="yJi-dd-HgU" id="EtK-vO-9un"/>
@@ -71,7 +72,15 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="men" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-R0-oUb">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-hC-kAC">
+                    <rect key="frame" x="120.66666666666669" y="127" width="152" height="152"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="152" id="TZj-Ic-WWJ"/>
+                        <constraint firstAttribute="height" constant="152" id="dxy-Lk-LPC"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="men" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-R0-oUb">
                     <rect key="frame" x="120.66666666666669" y="127" width="152" height="152"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="152" id="Sjl-uM-xi8"/>
@@ -185,6 +194,9 @@
                         <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
                         <color key="baseBackgroundColor" red="0.36470589040000001" green="0.72941178080000002" blue="0.91764706370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="tapUpdateButton:" destination="-1" eventType="touchUpInside" id="yc3-8G-uR7"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -192,17 +204,21 @@
             <constraints>
                 <constraint firstItem="hjj-o4-JLB" firstAttribute="top" secondItem="C2k-O5-FwD" secondAttribute="bottom" constant="5" id="0iR-8p-nMv"/>
                 <constraint firstItem="yJi-dd-HgU" firstAttribute="top" secondItem="HQX-Ts-Gbt" secondAttribute="bottom" constant="16" id="0kc-eO-UMg"/>
+                <constraint firstItem="Bf5-hC-kAC" firstAttribute="width" secondItem="IRv-R0-oUb" secondAttribute="width" id="1zy-G6-QXe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Qb-iv-CcS" secondAttribute="trailing" constant="16" id="5WN-ST-O7W"/>
                 <constraint firstItem="JDg-9r-6Fn" firstAttribute="top" secondItem="IRv-R0-oUb" secondAttribute="bottom" constant="36" id="63K-0b-cVt"/>
                 <constraint firstItem="HQX-Ts-Gbt" firstAttribute="top" secondItem="UbK-28-iKS" secondAttribute="bottom" constant="6" id="Ehg-Fj-iH4"/>
+                <constraint firstItem="Bf5-hC-kAC" firstAttribute="height" secondItem="IRv-R0-oUb" secondAttribute="height" id="ID9-P2-5Zx"/>
                 <constraint firstItem="C2k-O5-FwD" firstAttribute="top" secondItem="hUR-9y-YB0" secondAttribute="bottom" constant="20" id="JTU-67-xW7"/>
                 <constraint firstItem="t4w-1s-btL" firstAttribute="bottom" secondItem="IRv-R0-oUb" secondAttribute="bottom" id="KYF-hO-UnS"/>
                 <constraint firstItem="JDg-9r-6Fn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="64" id="L33-aB-TGk"/>
                 <constraint firstItem="HQX-Ts-Gbt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Lpj-o4-JIT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S7h-X4-h1M" secondAttribute="trailing" id="NYs-Ix-0fG"/>
+                <constraint firstItem="Bf5-hC-kAC" firstAttribute="centerY" secondItem="IRv-R0-oUb" secondAttribute="centerY" id="Tp9-6g-s9P"/>
                 <constraint firstItem="hUR-9y-YB0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="64" id="UoH-ul-2Q6"/>
                 <constraint firstItem="UbK-28-iKS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="64" id="Z7G-6Q-v0k"/>
                 <constraint firstItem="S7h-X4-h1M" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aak-hr-dgB"/>
+                <constraint firstItem="Bf5-hC-kAC" firstAttribute="centerX" secondItem="IRv-R0-oUb" secondAttribute="centerX" id="bwZ-bd-1jn"/>
                 <constraint firstItem="hjj-o4-JLB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="d72-jO-z10"/>
                 <constraint firstItem="S7h-X4-h1M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dId-17-5Ww"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hjj-o4-JLB" secondAttribute="trailing" constant="40" id="eaf-Hx-RbI"/>
