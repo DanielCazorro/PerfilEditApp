@@ -12,31 +12,40 @@ struct PerfilView: View {
     @ObservedObject var viewModel: PerfilViewModel
     
     // Private objects
-    @State private var phoneNumber: String = ""
-    @State private var aboutMe: String = ""
     @State private var showAlert = false
+    @State private var alertTitle: String = ""
+    @State private var alertMessage: String = ""
     
     // Life cycle
     var body: some View {
         NavigationView {
+            
             VStack {
                 // Espacio entre la imagen y el navigation Bar
                 Divider()
                     .overlay(.background)
                     .frame(height: 24)
                 
-                // Main Picture
-                Image(uiImage: viewModel.selectedImage ?? UIImage(named: "main")!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 152, height: 152)
-                    .cornerRadius(160)
-                    .shadow(radius: 3, x:0, y:6)
+                ZStack {
+                    // Main Picture
+                    Image(uiImage: viewModel.selectedImage ?? UIImage(named: "main")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 152, height: 152)
+                        .cornerRadius(160)
+                        .shadow(radius: 3, x:0, y:6)
+                    Image(systemName: "photo.circle")
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                        .offset(x: 50, y: 60)
+                    
+                        .onTapGesture {
+                            //MARK: TODO Al tocar la imagen, abre la galería de imágenes
+                            self.openImagePicker()
+                        }
+                    
+                }
                 
-                    .onTapGesture {
-                        // Al tocar la imagen, abre la galería de imágenes
-                        self.openImagePicker()
-                    }
                 
                 // Espacio entre imagen y textlabel correo electrónico
                 Divider()
@@ -72,7 +81,7 @@ struct PerfilView: View {
                     .overlay(.background)
                     .frame(height: 6)
                 
-                TextField("Número de teléfono",text: $phoneNumber)
+                TextField("Número de teléfono",text:$viewModel.phoneNumber)
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                     .padding(.leading, 40)
                     .padding(.trailing, 40)
@@ -127,7 +136,7 @@ struct PerfilView: View {
                     .overlay(.background)
                     .frame(height: 6)
                 
-                TextField("Información sobre mi",text: $aboutMe)
+                TextField("Información sobre mi",text: $viewModel.aboutMe)
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                     .padding(.leading, 40)
                     .padding(.trailing, 40)
@@ -139,8 +148,7 @@ struct PerfilView: View {
                 
                 
                 Button(action: {
-                    self.viewModel.updateInformation()
-                    self.showAlert = true
+                    self.tapUpdateButton()
                 }) {
                     Text("Actualizar")
                         .padding(.leading, 16)
@@ -148,10 +156,16 @@ struct PerfilView: View {
                         .frame(width: 343, height: 56)
                 }
                 .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Información actualizada"),
-                          message: Text("La información se ha actualizado"),
+                    Alert(title: Text(alertTitle),
+                          message: Text(alertMessage),
                           dismissButton: .default(Text("OK")))
                 }
+                .onReceive(viewModel.showAlert) { alert in
+                    self.alertTitle = alert.0
+                    self.alertMessage = alert.1
+                    self.showAlert = true
+                }
+                
                 .buttonStyle(.borderedProminent)
             }
             .textFieldStyle(.roundedBorder)
@@ -163,7 +177,7 @@ struct PerfilView: View {
                     
                 }) {
                     Image(systemName: "arrow.backward")
-                        .font(.title)
+                        .font(.title2)
                         .foregroundColor(.blue)
                 },
                 trailing: HStack {
@@ -173,7 +187,7 @@ struct PerfilView: View {
                         
                     }) {
                         Image(systemName: "xmark")
-                            .font(.title)
+                            .font(.title2)
                             .foregroundColor(.blue)
                     }
                     .disabled(viewModel.selectedImage == nil) // Deshabilita el botón si no hay imagen seleccionada
@@ -184,11 +198,12 @@ struct PerfilView: View {
     }
     
     private func openImagePicker() {
-        
+        guard let url = URL(string: "photos-redirect://") else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     private func tapUpdateButton() {
-        
+        viewModel.updateInformation()
     }
     
     
