@@ -16,6 +16,7 @@ class PerfilViewModel {
     }
     
     private func informationUpdated() {
+        // Notifica al delegado que la información se ha actualizado
         delegate?.didUpdateInformation()
     }
 }
