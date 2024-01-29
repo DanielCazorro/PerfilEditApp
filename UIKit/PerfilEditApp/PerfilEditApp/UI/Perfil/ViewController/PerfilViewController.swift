@@ -50,6 +50,8 @@ class PerfilViewController: UIViewController, UIImagePickerControllerDelegate & 
     // ViewModel
     var perfilViewModel = PerfilViewModel()
     
+    private let defaultBorderColor = UIColor.lightGray.cgColor
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -58,6 +60,14 @@ class PerfilViewController: UIViewController, UIImagePickerControllerDelegate & 
         // Configurar delegados de los text fields
         phoneNumberTextField.delegate = self
         aboutMeTextField.delegate = self
+        
+        // Establecer el ancho del borde para todos los text fields
+        phoneNumberTextField.layer.borderWidth = 0.5
+        aboutMeTextField.layer.borderWidth = 0.5
+        
+        // Establecer el color predeterminado del borde para todos los text fields
+        phoneNumberTextField.layer.borderColor = defaultBorderColor
+        aboutMeTextField.layer.borderColor = defaultBorderColor
         
         // Deshabilitamos el botón de acctualización inicialmente
         updateButton.isEnabled = false
@@ -158,5 +168,15 @@ extension PerfilViewController: UITextFieldDelegate {
         updateButton.isEnabled = !phoneNumberText.isEmpty && !aboutMeText.isEmpty
         
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Cambiar el color del borde del TextField cuando se inicia la edición
+        textField.layer.borderColor = UIColor.blue.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // Restaurar el color del borde del TextField cuando finaliza la edición
+        textField.layer.borderColor = UIColor.lightGray.cgColor
     }
 }
