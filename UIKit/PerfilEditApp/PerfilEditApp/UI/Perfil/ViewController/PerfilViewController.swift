@@ -12,7 +12,7 @@ protocol PerfilViewModelDelegate: AnyObject {
     func didUpdateInformation()
 }
 
-class PerfilViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class PerfilViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -51,6 +51,7 @@ class PerfilViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     var perfilViewModel = PerfilViewModel()
     
     // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,6 +65,26 @@ class PerfilViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         // Configurar el delegado del ViewModel
         perfilViewModel.delegate = self
         
+        // Configurar el gesto para ocultar el teclado al tocar fuera de los campos de texto
+        let tapGestureOut = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGestureOut)
+        
+        // Método que configura la imagen
+        imageForm()
+        
+        // Configurar el gesto para la imagen pequeña, para abrir la galería
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapImageButton))
+        imageButton.isUserInteractionEnabled = true
+        imageButton.addGestureRecognizer(tapGesture)
+    }
+    
+    // MARK: IBActions
+    @IBAction func tapUpdateButton(_ sender: Any) {
+        perfilViewModel.updateInformation()
+    }
+    
+    // MARK: - Functions
+    private func imageForm() {
         // MARK: Main Picture
         // Configura la imagen como redonda con sombra
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
@@ -86,31 +107,6 @@ class PerfilViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         imageViewBackShadow.layer.shadowOpacity = 0.3
         imageViewBackShadow.layer.shadowOffset = CGSize(width: 0, height: 5)
         imageViewBackShadow.layer.shadowRadius = 2
-        
-        // Configurar el gesto para la imagen
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapImageButton))
-        imageButton.isUserInteractionEnabled = true
-        imageButton.addGestureRecognizer(tapGesture)
-    }
-    
-    // MARK: IBActions
-    @IBAction func tapUpdateButton(_ sender: Any) {
-        perfilViewModel.updateInformation()
-    }
-    
-    // MARK: - UITextFieldDelegate
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        // Este método se llama cada vez que se realiza un cambio en el texto de un text field
-        
-        // Verifica si ambos text fields tienen contenido
-        let phoneNumberText = phoneNumberTextField.text ?? ""
-        let aboutMeText = aboutMeTextField.text ?? ""
-        
-        // Habilita el botón de actualización solo si ambos text fields tienen contenido
-        updateButton.isEnabled = !phoneNumberText.isEmpty && !aboutMeText.isEmpty
-        
-        return true
     }
     
     // Método para mostrar la alerta
@@ -134,11 +130,33 @@ class PerfilViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         imagePickerController.sourceType = .photoLibrary
         present(imagePickerController, animated: true, completion: nil)
     }
+    
+    // Método para ocultar el teclado al tocar fuera de los campos de texto
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 // MARK: - PerfilViewModelDelegate
 extension PerfilViewController: PerfilViewModelDelegate {
     func didUpdateInformation() {
         showAlert()
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension PerfilViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // Este método se llama cada vez que se realiza un cambio en el texto de un text field
+        
+        // Verifica si ambos text fields tienen contenido
+        let phoneNumberText = phoneNumberTextField.text ?? ""
+        let aboutMeText = aboutMeTextField.text ?? ""
+        
+        // Habilita el botón de actualización solo si ambos text fields tienen contenido
+        updateButton.isEnabled = !phoneNumberText.isEmpty && !aboutMeText.isEmpty
+        
+        return true
     }
 }
