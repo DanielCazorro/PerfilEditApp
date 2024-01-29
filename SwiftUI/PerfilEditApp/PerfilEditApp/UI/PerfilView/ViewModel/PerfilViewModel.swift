@@ -15,6 +15,11 @@ class PerfilViewModel:ObservableObject {
     @Published var phoneNumber: String = ""
     @Published var aboutMe: String = ""
 
+    // Propiedad para habilitar/deshabilitar el botón de actualizar
+    var isUpdateButtonEnabled: Bool {
+        return !phoneNumber.isEmpty && !aboutMe.isEmpty
+    }
+    
     func updateInformation() {
         // Verifica si los campos están rellenos
         guard !phoneNumber.isEmpty, !aboutMe.isEmpty else {

@@ -160,6 +160,7 @@ struct PerfilView: View {
                           message: Text(alertMessage),
                           dismissButton: .default(Text("OK")))
                 }
+                .disabled(!viewModel.isUpdateButtonEnabled) // Deshabilita el botón si las condiciones no se cumplen
                 .onReceive(viewModel.showAlert) { alert in
                     self.alertTitle = alert.0
                     self.alertMessage = alert.1
