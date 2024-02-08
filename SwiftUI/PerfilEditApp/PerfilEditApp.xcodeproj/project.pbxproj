@@ -55,9 +55,9 @@
 		2C5209452B5AC21B004C1A68 /* PerfilEditApp */ = {
 			isa = PBXGroup;
 			children = (
-				2C5209542B5AC30B004C1A68 /* UI */,
 				2C5209462B5AC21B004C1A68 /* PerfilEditAppApp.swift */,
 				2C5209482B5AC21B004C1A68 /* ContentView.swift */,
+				2C5209542B5AC30B004C1A68 /* UI */,
 				2C52094A2B5AC21B004C1A68 /* Assets.xcassets */,
 				2C52094C2B5AC21B004C1A68 /* Preview Content */,
 			);
@@ -83,26 +83,10 @@
 		2C5209552B5AC30F004C1A68 /* PerfilView */ = {
 			isa = PBXGroup;
 			children = (
-				2C52095D2B5AC3B7004C1A68 /* View */,
-				2C5209562B5AC319004C1A68 /* ViewModel */,
-			);
-			path = PerfilView;
-			sourceTree = "<group>";
-		};
-		2C5209562B5AC319004C1A68 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
+				2C52095B2B5AC3B3004C1A68 /* PerfilView.swift */,
 				2C5209592B5AC38E004C1A68 /* PerfilViewModel.swift */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		2C52095D2B5AC3B7004C1A68 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2C52095B2B5AC3B3004C1A68 /* PerfilView.swift */,
-			);
-			path = View;
+			path = PerfilView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
