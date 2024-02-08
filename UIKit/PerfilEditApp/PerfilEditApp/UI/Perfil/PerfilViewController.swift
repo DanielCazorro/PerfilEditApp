@@ -48,15 +48,50 @@ class PerfilViewController: UIViewController, UIImagePickerControllerDelegate & 
     @IBOutlet weak var updateButton: UIButton!
     
     // ViewModel
-    var perfilViewModel = PerfilViewModel()
+    private var viewModel = PerfilViewModel()
     
     private let defaultBorderColor = UIColor.lightGray.cgColor
 
     // MARK: - Life Cycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTextFields()
+        hideKeyboard()
+        openGallery()
+        // Método que configura la imagen
+        imageForm()
         
+        // Deshabilitamos el botón de acctualización inicialmente
+        updateButton.isEnabled = false
+        
+        // Configurar el delegado del ViewModel
+        viewModel.delegate = self
+    }
+    
+    // MARK: IBActions
+    @IBAction func tapUpdateButton(_ sender: Any) {
+        viewModel.updateInformation()
+    }
+    
+    // MARK: - Functions
+    func set(viewModel: PerfilViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    private func openGallery() {
+        // Configurar el gesto para la imagen pequeña, para abrir la galería
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapImageButton))
+        imageButton.isUserInteractionEnabled = true
+        imageButton.addGestureRecognizer(tapGesture)
+    }
+    
+    private func hideKeyboard() {
+        // Configurar el gesto para ocultar el teclado al tocar fuera de los campos de texto
+        let tapGestureOut = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGestureOut)
+    }
+    
+    private func configureTextFields() {
         // Configurar delegados de los text fields
         phoneNumberTextField.delegate = self
         aboutMeTextField.delegate = self
@@ -68,32 +103,8 @@ class PerfilViewController: UIViewController, UIImagePickerControllerDelegate & 
         // Establecer el color predeterminado del borde para todos los text fields
         phoneNumberTextField.layer.borderColor = defaultBorderColor
         aboutMeTextField.layer.borderColor = defaultBorderColor
-        
-        // Deshabilitamos el botón de acctualización inicialmente
-        updateButton.isEnabled = false
-        
-        // Configurar el delegado del ViewModel
-        perfilViewModel.delegate = self
-        
-        // Configurar el gesto para ocultar el teclado al tocar fuera de los campos de texto
-        let tapGestureOut = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGestureOut)
-        
-        // Método que configura la imagen
-        imageForm()
-        
-        // Configurar el gesto para la imagen pequeña, para abrir la galería
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapImageButton))
-        imageButton.isUserInteractionEnabled = true
-        imageButton.addGestureRecognizer(tapGesture)
     }
     
-    // MARK: IBActions
-    @IBAction func tapUpdateButton(_ sender: Any) {
-        perfilViewModel.updateInformation()
-    }
-    
-    // MARK: - Functions
     private func imageForm() {
         // MARK: Main Picture
         // Configura la imagen como redonda con sombra
