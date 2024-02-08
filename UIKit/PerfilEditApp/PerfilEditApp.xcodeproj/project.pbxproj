@@ -58,9 +58,8 @@
 		2C2A7A4C2B5A788C0051946C /* PerfilEditApp */ = {
 			isa = PBXGroup;
 			children = (
+				2C5B8DE02B74D2440036FAFE /* App */,
 				2C2A7A612B5A79120051946C /* UI */,
-				2C2A7A4D2B5A788C0051946C /* AppDelegate.swift */,
-				2C2A7A4F2B5A788C0051946C /* SceneDelegate.swift */,
 				2C2A7A562B5A788D0051946C /* Assets.xcassets */,
 				2C2A7A5B2B5A788D0051946C /* Info.plist */,
 			);
@@ -70,8 +69,8 @@
 		2C2A7A612B5A79120051946C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2C2A7A632B5A7AA50051946C /* Perfil */,
 				2C2A7A622B5A79170051946C /* LaunchScreen */,
+				2C2A7A632B5A7AA50051946C /* Perfil */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -87,35 +86,20 @@
 		2C2A7A632B5A7AA50051946C /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
-				2C2A7A642B5A7AAE0051946C /* View */,
-				2C2A7A662B5A7AB80051946C /* ViewController */,
-				2C2A7A672B5A7AC30051946C /* ViewModel */,
+				2C2A7A692B5A7B010051946C /* PerfilViewController.xib */,
+				2C2A7A682B5A7B010051946C /* PerfilViewController.swift */,
+				2C2A7A6C2B5A7B110051946C /* PerfilViewModel.swift */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
 		};
-		2C2A7A642B5A7AAE0051946C /* View */ = {
+		2C5B8DE02B74D2440036FAFE /* App */ = {
 			isa = PBXGroup;
 			children = (
-				2C2A7A692B5A7B010051946C /* PerfilViewController.xib */,
+				2C2A7A4D2B5A788C0051946C /* AppDelegate.swift */,
+				2C2A7A4F2B5A788C0051946C /* SceneDelegate.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2C2A7A662B5A7AB80051946C /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				2C2A7A682B5A7B010051946C /* PerfilViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		2C2A7A672B5A7AC30051946C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				2C2A7A6C2B5A7B110051946C /* PerfilViewModel.swift */,
-			);
-			path = ViewModel;
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
