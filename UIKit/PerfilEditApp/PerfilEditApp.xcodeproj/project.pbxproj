@@ -14,6 +14,7 @@
 		2C2A7A6A2B5A7B010051946C /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A7A682B5A7B010051946C /* PerfilViewController.swift */; };
 		2C2A7A6B2B5A7B010051946C /* PerfilViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2A7A692B5A7B010051946C /* PerfilViewController.xib */; };
 		2C2A7A6D2B5A7B110051946C /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A7A6C2B5A7B110051946C /* PerfilViewModel.swift */; };
+		2C5B8DE22B74D27D0036FAFE /* PerfilViewWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B8DE12B74D27D0036FAFE /* PerfilViewWireframe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2C2A7A682B5A7B010051946C /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		2C2A7A692B5A7B010051946C /* PerfilViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PerfilViewController.xib; sourceTree = "<group>"; };
 		2C2A7A6C2B5A7B110051946C /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
+		2C5B8DE12B74D27D0036FAFE /* PerfilViewWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewWireframe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				2C2A7A692B5A7B010051946C /* PerfilViewController.xib */,
 				2C2A7A682B5A7B010051946C /* PerfilViewController.swift */,
 				2C2A7A6C2B5A7B110051946C /* PerfilViewModel.swift */,
+				2C5B8DE12B74D27D0036FAFE /* PerfilViewWireframe.swift */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				2C2A7A6A2B5A7B010051946C /* PerfilViewController.swift in Sources */,
 				2C2A7A4E2B5A788C0051946C /* AppDelegate.swift in Sources */,
 				2C2A7A6D2B5A7B110051946C /* PerfilViewModel.swift in Sources */,
+				2C5B8DE22B74D27D0036FAFE /* PerfilViewWireframe.swift in Sources */,
 				2C2A7A502B5A788C0051946C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

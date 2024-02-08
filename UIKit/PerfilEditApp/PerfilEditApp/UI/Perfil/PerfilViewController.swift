@@ -48,7 +48,7 @@ class PerfilViewController: UIViewController, UIImagePickerControllerDelegate & 
     @IBOutlet weak var updateButton: UIButton!
     
     // ViewModel
-    var perfilViewModel = PerfilViewModel()
+    private var viewModel = PerfilViewModel()
     
     private let defaultBorderColor = UIColor.lightGray.cgColor
 
@@ -73,7 +73,7 @@ class PerfilViewController: UIViewController, UIImagePickerControllerDelegate & 
         updateButton.isEnabled = false
         
         // Configurar el delegado del ViewModel
-        perfilViewModel.delegate = self
+        viewModel.delegate = self
         
         // Configurar el gesto para ocultar el teclado al tocar fuera de los campos de texto
         let tapGestureOut = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -90,10 +90,14 @@ class PerfilViewController: UIViewController, UIImagePickerControllerDelegate & 
     
     // MARK: IBActions
     @IBAction func tapUpdateButton(_ sender: Any) {
-        perfilViewModel.updateInformation()
+        viewModel.updateInformation()
     }
     
     // MARK: - Functions
+    func set(viewModel: PerfilViewModel) {
+        self.viewModel = viewModel
+    }
+    
     private func imageForm() {
         // MARK: Main Picture
         // Configura la imagen como redonda con sombra
