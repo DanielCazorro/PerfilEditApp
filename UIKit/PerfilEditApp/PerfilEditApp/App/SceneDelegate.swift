@@ -15,7 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let perfilViewController = PerfilViewController()
+        let perfilViewWireframe = PerfilViewWireframe()
+        let perfilViewController = perfilViewWireframe.viewController
+        
         window.rootViewController = perfilViewController
         window.makeKeyAndVisible()
         
